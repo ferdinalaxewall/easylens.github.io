@@ -433,6 +433,7 @@ body{
     width: 40px;
     height: 40px;
     background-color: var(--background);
+    font-weight: var(--bold);
     display: grid;
     place-content: center;
     border-radius: 50%;
@@ -472,6 +473,7 @@ body{
 .footer__title{
     font-family: var(--font-title);
     font-size: var(--fs-footer-title);
+    margin-bottom: 10px;
 }
 
 .footer__contact-title{
