@@ -106,8 +106,7 @@ body{
 }
 
 .content-section{
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top:85px;
 }
 
 .navbar .content-wrapper{
@@ -390,6 +389,10 @@ body{
 }
 
 /* Cara Pemesanan Section */
+
+#cara-pemesanan{
+    padding-bottom: 45px;
+}
 
 .order__content{
     display: flex;
