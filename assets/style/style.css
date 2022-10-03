@@ -16,8 +16,8 @@
     --fs-subtitle:18px;
     --fs-title:22px;
     --fs-nav-title:32px;
-    --fs-section-title: 39px;
     --fs-hero-title:42px;
+    --fs-footer-title: 57px;
 }
 
 *, *::before, *::after{
@@ -94,7 +94,7 @@ body{
 }
 
 .section-title{
-    font-size: var(--fs-section-title);
+    font-size: var(--fs-nav-title);
     color: var(--primary);
     text-align: center;
     margin-bottom: 75px;
@@ -436,6 +436,56 @@ body{
     left: 15px;
     top: 15px;
     color: var(--white);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.footer{
+    width: 100%;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: flex-start;
+    padding: 50px;
+    gap: 30px;
+}
+
+.footer__left{
+    width: 60%;
+}
+
+.footer__center, .footer__right{
+    width: 25%;
+    margin-top: 10px;
+}
+
+.footer__center{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.footer__title{
+    font-family: var(--font-title);
+    font-size: var(--fs-footer-title);
+}
+
+.footer__contact-title{
+    font-size: var(--fs-subtitle);
+    margin-bottom: 15px;
+}
+
+.footer__button-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__button{
+    background-color: var(--background);
+    padding: 10px;
+    border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
