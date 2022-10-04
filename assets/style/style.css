@@ -1,11 +1,11 @@
 :root{
     --font-body: 'Quicksand', sans-serif;
     --font-title:'Passion One', cursive;
-    --primary:#FEB139;
-    --primary-button:#C78B2F;
-    --secondary:#1B2D40;
-    --background:#143F6B;
-    --white:#f3f3f3;
+    --primary:#2c83e7;
+    --primary-button:#4e99ee;
+    --secondary:#dddddd;
+    --background:#fff;
+    --black:#131313;
     --light:300;
     --regular:400;
     --medium:500;
@@ -52,7 +52,7 @@ a:hover, button:hover{
 
 a, a:hover, a:visited{
     text-decoration: none;
-    color: var(--white);
+    color: var(--black);
 }
 
 select:focus{
@@ -63,16 +63,9 @@ ul{
     list-style: none;
 }
 
-.produk__box-image img{
-    width: 100%;
-    height: 180px;
-    object-position: center;
-    object-fit: contain;
-}
-
 body{
     font-family: var(--font-body);
-    color: var(--white);
+    color: var(--black);
     background-color: var(--background);
     font-size: var(--fs-body);
     min-height: 100vh;
@@ -90,7 +83,7 @@ body{
     width: 100%;
     padding: 15px 7.5px;
     background-color: var(--background);
-    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.25);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 .section-title{
@@ -128,11 +121,12 @@ body{
 
 .get-started-button{
     font-weight: var(--semibold);
+    color: var(--background) !important;
     font-size: var(--fs-sub-body);
     column-gap: 17px;
     padding: 7.5px 20px;
     border-radius: 5px;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -228,10 +222,11 @@ body{
 
 .layanan__content-box{
     background-color: var(--background);
-    width: 320px;
-    height: 320px;
+    width: 280px;
+    height: 300px;
     display: flex;
     flex-direction: column;
+    padding: 10px;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
@@ -239,11 +234,11 @@ body{
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .layanan__content-title{
-    font-size: var(--fs-title);
+    font-size: var(--fs-subtitle);
     text-align: center;
     width: 75%;
 }
@@ -265,17 +260,17 @@ body{
     -webkit-appearance: none !important;
     -moz-appearance: none !important;
     padding-left: 1rem;
-    background-color: var(--secondary);
+    /* background-color: var(--secondary); */
     background-image: url("../icon/chevron-down.svg");
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: calc(100% - 8px) center;
-    color: var(--white);
+    color: var(--black);
     width: 175px;
     height: 40px;
     font-family: var(--font-body);
     font-weight: var(--semibold);
-    border-color: transparent;
+    border-color: var(--primary);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -288,10 +283,6 @@ body{
     -o-transition: all .15s ease-out;
 }
 
-#filter-content:focus{
-    border-color: var(--primary);
-}
-
 .produk__content{
     display: flex;
     gap: 15px;
@@ -299,39 +290,102 @@ body{
 
 .produk__box{
     background-color: var(--background);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
-    /* width: 300px; */
-    text-align: center;
+    text-align: left;
     border-radius:10px;
     -webkit-border-radius:10px;
     -moz-border-radius:10px;
     -ms-border-radius:10px;
     -o-border-radius:10px;
+    transition: all .15s linear;
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    -o-transition: all .15s linear;
+}
+
+.produk__box:hover{
+    border-color: var(--primary);
 }
 
 .produk__box-image{
     padding: 10px 20px;
-    height: 200px;
+    height: 180px;
     display: grid;
     place-items: center;
     background-color: white;
 }
+
+.produk__box-image img{
+    width: 100%;
+    height: 120px;
+    object-position: center;
+    object-fit: contain;
+}
+
 .produk__box-body{
-    padding: 20px;
+    padding: 15px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 20px;
+    gap: 12.5px;
     height: 50%;
 }
 
+.produk__body-footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-to-collection{
+    z-index: 3;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    background-color: transparent;
+    width:40px;
+    height: 40px;
+    padding-top: 3px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all .15s linear;
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    -o-transition: all .15s linear;
+}
+
+.produk__link{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.produk__link:hover{
+    opacity: 1;
+}
+
 .produk__title{
-    font-size: var(--fs-title);
+    font-size: var(--fs-subtitle);
     font-weight: var(--bold);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -352,7 +406,7 @@ body{
 
 .produk__price{
     color: var(--primary);
-    font-size: var(--fs-subtitle);
+    font-size: var(--fs-body);
 }
 
 .produk__box-footer{
@@ -369,13 +423,17 @@ body{
 #order-button{
     width:100%;
     background-color: var(--primary-button);
-    color: var(--white);
+    color: var(--black);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 .owl-stage{
     display: flex;
     cursor: grab;
+}
+
+.owl-grab{
+    cursor: grabbing;
 }
 
 .owl-nav button{
@@ -407,12 +465,14 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--black);
+    font-size: var(--fs-subtitle);
     justify-content: space-evenly;
-    padding: 20px;
+    padding: 20px 25px;
     text-align: center;
     width: 250px;
     height: 250px;
-    background-color: var(--secondary);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -432,14 +492,14 @@ body{
     position: absolute;
     width: 40px;
     height: 40px;
-    background-color: var(--background);
     font-weight: var(--bold);
+    color: var(--primary);
+    border: 1px solid var(--primary);
     display: grid;
     place-content: center;
     border-radius: 50%;
     left: 15px;
     top: 15px;
-    color: var(--white);
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -451,15 +511,21 @@ body{
     background-color: var(--secondary);
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     padding: 50px;
     gap: 30px;
 }
 
 .footer__left{
-    width: 60%;
+    width: 50%;
 }
 
-.footer__center, .footer__right{
+.footer__center{
+    width: 10%;
+    margin-top: 10px;
+}
+
+.footer__right{
     width: 25%;
     margin-top: 10px;
 }
