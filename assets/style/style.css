@@ -737,10 +737,6 @@ body::-webkit-scrollbar-thumb:hover{
 
 /* Cara Pemesanan Section */
 
-#cara-pemesanan{
-    padding-bottom: 45px;
-}
-
 .order__content{
     display: flex;
     align-items: center;
@@ -1118,6 +1114,137 @@ body::-webkit-scrollbar-thumb:hover{
 }
 }
 
+.galeri__content{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 70px;
+}
+
+.galeri__box{
+    width: 250px;
+    height: 250px;
+    cursor: zoom-in;
+}
+
+.galeri__box img{
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+    object-position: center;
+    filter: grayscale(0.7);
+    -webkit-filter: grayscale(0.7);
+    transition: all .15s linear;
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    -o-transition: all .15s linear;
+}
+
+.galeri__box img[data-scroll=show]{
+    opacity: 1;
+    visibility: visible;
+}
+
+.galeri__box:hover img{
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+}
+
+.lightbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 90;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .15s ease-in-out;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+}
+
+.lightbox.open{
+    visibility: visible;
+    opacity: 1;
+}
+
+.lightbox-overlay{
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 91;
+}
+
+.lightbox-content{
+    position: absolute;
+    border-radius: 10px;
+    z-index: 92;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    max-width: 95vw;
+    overflow-x: auto;
+    gap: 15px;
+    transform: translate(-50%, -55%);
+    -webkit-transform: translate(-50%, -55%);
+    -moz-transform: translate(-50%, -55%);
+    -ms-transform: translate(-50%, -55%);
+    -o-transform: translate(-50%, -55%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.lightbox-content::-webkit-scrollbar{
+    height: 7px;
+}
+
+.lightbox-content::-webkit-scrollbar-track{
+    background-color: var(--background);
+}
+.lightbox-content::-webkit-scrollbar-thumb{
+    background-color: var(--primary);
+}
+
+.lightbox-content img{
+    height: 0;
+    transition: all .15s linear;
+    -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    -o-transition: all .15s linear;
+}
+
+.lightbox-content.open img{
+    height: 80vh;
+}
+
+.close-lightbox{
+    position: absolute;
+    z-index: 95;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: transparent;
+    color: var(--background);
+    line-height: var(--fs-hero-title);
+    font-family: var(--font-body);
+    font-size: var(--fs-footer-title);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
 @media(max-width:1400px){
     .content-wrapper{
         width: 80vw;
@@ -1397,6 +1524,11 @@ body::-webkit-scrollbar-thumb:hover{
 
     .detail-produk__image{
         height: 200px;
+    }
+
+    .galeri__box{
+        width: 150px;
+        height: 150px;
     }
 }
 
